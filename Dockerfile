@@ -1,3 +1,4 @@
-FROM nginx
-COPY . /usr/share/nginx/html
-
+FROM httpd
+MAINTAINER gurunadhan
+COPY target/*.jar ./app.jar
+ENTRYPOINT ["java", "-jar", "app.jar"]
