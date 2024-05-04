@@ -25,7 +25,7 @@ public class TodoJpaController {
 	@Autowired
 	private TodoRepository todoRepository;
 	
-	@RequestMapping("list-todos")
+	@RequestMapping("list-todos", method = RequestMethod.GET)
 	public String showTodosList(ModelMap model) {
 		String name = welcomeService.getLoggedInUsername();
 		List<Todo> todos = todoRepository.findByUsername(name);
