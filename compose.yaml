@@ -1,0 +1,11 @@
+services:
+  todo:
+    build: .
+    ports:
+      - "8888:8080"
+    networks:
+      - todo-network
+
+networks:
+  todo-network:
+    driver: bridge
